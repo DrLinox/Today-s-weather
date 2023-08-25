@@ -1,5 +1,12 @@
+/* ... Your existing CSS code ... */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-body{
+
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
     box-sizing: border-box;
     height: 100vh;
     display: flex;
@@ -7,37 +14,42 @@ body{
     align-items: center;
     flex-direction: column;
     font-family: 'Montserrat';
-    overflow-y: hidden;
 }
-.form-container{
+
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.svg{
+
+.svg {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px 30px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: none;
     outline: none;
     background-color: transparent;
     transition: 300ms;
     cursor: pointer;
 }
-.svg:hover{
+
+.svg:hover {
     background-color: rgb(223, 223, 223);
     transition: 300ms;
 }
-.night-time{
+
+.night-time {
     background: linear-gradient(#07005C, #008676);
 }
-.day-time{
+
+.day-time {
     background: linear-gradient(#FFE177, #008F7D);
 }
-.search-input{
+
+.search-input {
     outline: none;
     border: none;
     padding: 15px 35px;
@@ -46,55 +58,106 @@ body{
     font-family: 'Montserrat';
     font-size: 16px;
 }
-.input-container{
+
+.input-container {
     display: flex;
     flex-direction: row;
-    background-color: whitesmoke;
-    border-radius: 30px;
+    background-color: hwb(0 96% 4%);
+    border-radius: 20px;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 450px;
+    width: 70%;
     padding: 40px 10px;
     border-radius: 30px;
     margin: 30px 0px;
     color: white;
     gap: 45px;
 }
-.city-value{
+
+.city-value {
     font-size: 60px;
     font-family: 'Montserrat';
     font-weight: 500;
 }
-.temperature-value{
+
+.temperature-value {
     font-size: 75px;
     font-family: 'Montserrat';
     font-weight: 600;
 }
-.forecast-container{
+
+.forecast-container {
     padding: 20px 30px;
     width: 85%;
     border-radius: 30px;
-    background-color: rgba(0, 59, 93,0.25);
+    background-color: rgba(0, 59, 93, 0.25);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-.cont{
+
+.cont {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 5px;
 }
-p{
+p {
     margin: 0;
 }
-h1{
+
+h1 {
     margin: 0;
     color: white;
+}
+
+@media (max-width:500px) {
+    .container {
+        width: 100%;
+    }
+
+    body {
+        height: 865px;
+    }
+}
+.loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-inner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #008F7D;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    /* Add the spin animation */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        border-top: 6px solid #FFE177;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-top: 6px solid #FFE177;
+    }
 }
